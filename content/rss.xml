@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>saiger.dev - RSS Feed</title>
+<link>{{content.index.meta.domain}}</link>
+<description>Personal Blog about IT</description>
+<atom:link href="{{content.index.meta.domain}}/rss.xml" rel="self" type="application/rss+xml" />
+<generator>saiger.dev - RSS builder</generator>
+{{#each content}}
+{{# if this.meta.published}}
+<item>
+{{#if this.meta.title}}<title>{{this.meta.title}}</title>
+{{else}}<title>{{@root.content.index.meta.domain}}/{{this.path}}</title>{{/if}}
+<link>{{@root.content.index.meta.domain}}/{{this.path}}</link>
+<guid>{{@root.content.index.meta.domain}}/{{this.path}}</guid>
+{{#if this.meta.short}}<description>{{this.meta.short}}</description>{{/if}}
+</item>
+{{/if}}
+{{/each}}
+</channel>
+</rss> 

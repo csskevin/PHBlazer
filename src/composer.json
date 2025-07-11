@@ -1,0 +1,7 @@
+{
+    "require": {
+        "league/commonmark": "^2.7",
+        "devtheorem/php-handlebars": "^0.9.8",
+        "phiki/phiki": "^1.1"
+    }
+}
