@@ -1,6 +1,7 @@
-.PHONY=build server watch deploy
+.PHONY=build server watch deploy clean
 
 build:
+	cd ./src && composer install
 	php ./src/index.php
 
 server:
@@ -10,3 +11,7 @@ watch:
 	while inotifywait -qr -e modify content/ public/ template/; do \
 		php ./src/index.php; \
 	done
+
+clean:
+	cd ./src && composer clear
+	rm -rf ./dist
